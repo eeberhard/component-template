@@ -23,7 +23,8 @@ the trajectory can be paused and resumed by triggering deactivation and activati
 
 To create a component package, create a new repository in GitHub using this repository as a template.
 
-![docs/creation.png](docs/creation.png)
+![Use this template menu](docs/creation-1.png)
+![Create new repository meny](docs/creation-2.png)
 
 Alternatively, you can also clone this repository locally and create a new repository from it.
 
