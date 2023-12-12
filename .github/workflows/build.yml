@@ -37,4 +37,5 @@ jobs:
         with:
           push: true
           tags: ghcr.io/aica-technology/component-example:latest
-          file: "{context}/aica-package.toml"
+          context: .
+          file: aica-package.toml
