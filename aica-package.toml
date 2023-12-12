@@ -1,0 +1,46 @@
+#syntax=ghcr.io/aica-technology/package-builder:v0.0.9
+
+[build]
+type = "ros"
+
+[build.cmake_args]
+# add any cmake args here, e.g.
+# SOME_FLAG = "ON"
+# you can override them in the CLI with `--build-arg config.build.cmake_args.SOME_FLAG=OFF`
+
+[build.environment.aica]
+image = "iron"
+
+[build.environment.aica.libraries]
+"@aica/foss/control-libraries" = "v7.2.0"
+
+[build.environment.aica.ros]
+"@aica/foss/modulo" = "v3.2.0"
+
+[build.environment.apt]
+# add any apt packages here, e.g.
+# libyaml-cpp-dev = "*"
+# these packages will be available during the build but not in the final image,
+# so they are useful for headers or static libraries but not for dynamic libraries
+
+[build.packages.component]
+source = "./source/template_component_package"
+
+[build.packages.component.dependencies.apt]
+# add any apt packages here, e.g.
+# libyaml-cpp-dev = "*"
+# these packages will be available during the build but also in the final image,
+# so they are useful for dynamic libraries
+
+# [build.packages.component.dependencies.pip]
+# by default, we will install any packages in `${source}/requirements.txt`
+# but you can customize the name of the file, e.g.
+# file = "requirements.txt"
+# otherwise you can specify the packages directly, e.g.
+# [build.packages.component.dependencies.pip.packages]
+# numpy = "1.0.0"
+
+
+# add other components here, e.g.
+# [build.packages.component2]
+# source = "./source/new_component_package"
