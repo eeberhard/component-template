@@ -13,7 +13,7 @@ jobs:
 
       - name: Run tests
         run: |
-          docker build -f aica-package.toml --stage test .
+          docker build -f aica-package.toml --target test .
 
   build:
     runs-on: ubuntu-latest
